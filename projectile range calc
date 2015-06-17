@@ -1,0 +1,50 @@
+/*Programmer: Christopher Guzman
+  Program: Lab 3, part 1, outputs the range of a
+  projectile.
+  Date: May 15, 2013
+  Inputs: Angle of trajectory, Initial velocity.
+  Processing: Calculate the range of the projectile.
+  Outputs: Angle, velocity, and range of projectile.*/
+
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+	//Variable declaration.//
+	double DegAngle=0.0;
+	double RadAngle=0.0;
+	double velocity=0.0;
+	double gravity=9.8;
+	double range=0.0;
+	double pi=3.1415926;
+
+	//Get User inputs.//
+	cout<<"\n--------------------Calculate the Range of Your Projectile!!!-------------------"<<endl;
+	cout<<"\n Please enter the angle of your projectile's path (0-90): ";
+	cin>>DegAngle;
+	cout<<"\n Please enter the initial velocity of your projectile (meters/sec): ";
+	cin>>velocity;
+	cout<<"\n--------------------------------------------------------------------------------"<<endl;
+
+	//Calculate the angle from degrees to radians.//
+	RadAngle=(DegAngle*pi)/180.0;
+
+	//Calculate the range of the projectile.//
+	range=(sin(RadAngle*2.0))*((pow(velocity,2))/gravity);
+
+	//Display Outputs.//
+	cout<<"\n\n\n---------------------------------RESULTS!!!-------------------------------------"<<endl;
+	cout<<"\n    For the angle you entered: "<<DegAngle<<" degrees"<<"\n"<<endl;
+	cout<<" And the velocity you entered: "<<velocity<<" meters/second"<<"\n\n"<<endl;
+	cout<<" The range of your projectile is "<<range<<" meters."<<endl;
+	cout<<"\n--------------------------------------------------------------------------------"<<endl;
+	cout<<"\n\n\n\n"<<endl;
+
+	system("pause");
+	return 0;
+}//end of main().//
